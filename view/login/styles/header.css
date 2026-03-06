@@ -15,7 +15,7 @@ header .left {
 header .left .img {
   width: 80px;
   height: 50px;
-  background: url(./images/weibo-header.png) no-repeat center;
+  background: url(../images/weibo-header.png) no-repeat center;
   background-size: contain;
 }
 header .left .input-box {
@@ -50,7 +50,7 @@ header .left .input-box span {
   line-height: 28px;
   top: 0px;
   right: 15px;
-  background: url(./images/search.png) no-repeat center;
+  background: url(../images/search.png) no-repeat center;
   background-size: contain;
 }
 header .right {
@@ -58,7 +58,7 @@ header .right {
   font-size: 12px;
 }
 header .right .nav {
-  width: 120px;
+  width: 180px;
   height: 50px;
   margin-right: 30px;
   display: flex;
@@ -68,15 +68,15 @@ header .right .nav {
 header .right .nav li {
   display: flex;
   align-items: center;
-  margin: 0 !important; /* 清空所有默认间距 */
+  margin-right: 10px;
 }
-header .right .nav li:first-child {
-  margin-right: -10px !important; /* 改成-15px就是几乎贴在一起 */
+header .right .nav li:last-child {
+  margin-right: 0px !important; /* 改成-15px就是几乎贴在一起 */
 }
 header .right .nav li img {
   width: 18px;
   height: 18px;
-  margin-right: 4px !important;
+  margin-right: 10px !important;
 }
 header .right .regist-login {
   display: flex;

@@ -41,7 +41,7 @@
   position: absolute;
   bottom: 14px;
   right: 10px;
-  background: url(./images/play-icon.png) no-repeat center/contain;
+  background: url(../images/play-icon.png) no-repeat center/contain;
 }
 .container main .main-right .works .work-list .item .info {
   width: 149px;
@@ -69,7 +69,7 @@
 .container main .main-right .works .work-list .item .info .option .praised-icon {
   width: 12px;
   height: 13px;
-  background: url(./images/praised.png) no-repeat center/contain;
+  background: url(../images/praised.png) no-repeat center/contain;
   display: inline-block;
   margin-right: 4px;
 }
@@ -97,5 +97,5 @@
 .container main .main-right .works .more .right-icon {
   width: 4px;
   height: 7px;
-  background: url(./images/arrow-right.png) no-repeat center/contain;
+  background: url(../images/arrow-right.png) no-repeat center/contain;
 }/*# sourceMappingURL=work.css.map */
