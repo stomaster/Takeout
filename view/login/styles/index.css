@@ -15,13 +15,14 @@ header .left {
 header .left .img {
   width: 80px;
   height: 50px;
-  background: url(../images/weibo-header.png) no-repeat center;
+  background: url(../images/guang.png) no-repeat center;
   background-size: contain;
 }
 header .left .input-box {
   position: relative;
   width: 470px;
   margin-left: 30px;
+  justify-content: center;
   box-sizing: border-box;
   background-color: #f2f2f2;
 }

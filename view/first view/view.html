@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>奶茶外卖网站</title>
+<link rel="stylesheet" href="view.css">
+</head>
+
+<body>
+
+<!-- 顶部导航 -->
+<header class="top-bar">
+    <div class="logo">🥤 奶茶</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="搜索奶茶...">
+        <button>🔍</button>
+    </div>
+
+    <div class="user">
+        👤 用户
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- 左侧分类 + 竖向广告位 -->
+    <aside class="sidebar-wrapper">
+        <!-- 分类模块 -->
+        <div class="sidebar">
+            <h3>分类</h3>
+            <ul>
+                <li>🥭 果茶</li>
+                <li>🍫 巧克力</li>
+                <li>🥛 奶味</li>
+                <li>🍵 无茶</li>
+                <li>🌿 无咖</li>
+                <li>🍓 果酱</li>
+            </ul>
+        </div>
+        
+        <!-- 竖向广告位 -->
+        <div class="sidebar-ads">
+            <div class="ad-item">
+                <img src="https://images.unsplash.com/photo-1559921010-70764557067c" alt="广告1">
+                <p>新品上市</p>
+            </div>
+            <div class="ad-item">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="广告2">
+                <p>满30减10</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main">
+        <!-- 奶茶排行榜 -->
+        <section class="milk-tea-ranking">
+            <h3>奶茶热销榜 🏆</h3>
+            <div class="milk-tea-list">
+                <div class="card rank-1">
+                    <div class="rank-badge">1</div>
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+                    <h4>珍珠奶茶</h4>
+                    <p>经典红茶+Q弹珍珠</p>
+                    <span>¥16</span>
+                </div>
+
+                <div class="card rank-2">
+                    <div class="rank-badge">2</div>
+                    <img src="https://images.unsplash.com/photo-1582562124811-c09040d0a901">
+                    <h4>焦糖奶茶</h4>
+                    <p>香甜焦糖风味</p>
+                    <span>¥18</span>
+                </div>
+
+                <div class="card rank-3">
+                    <div class="rank-badge">3</div>
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e">
+                    <h4>奶盖红茶</h4>
+                    <p>浓厚奶盖搭配红茶</p>
+                    <span>¥19</span>
+                </div>
+
+                <div class="card rank-4">
+                    <div class="rank-badge">4</div>
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87">
+                    <h4>芒果果茶</h4>
+                    <p>新鲜芒果果味</p>
+                    <span>¥17</span>
+                </div>
+
+                <div class="card rank-5">
+                    <div class="rank-badge">5</div>
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
+                    <h4>草莓奶茶</h4>
+                    <p>草莓+牛奶清甜口感</p>
+                    <span>¥18</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 评论区 -->
+        <section class="comments">
+            <h3>用户评论</h3>
+            <div class="comment">
+                <b>用户A：</b>
+                <p>珍珠奶茶很好喝，珍珠QQ弹弹，甜度刚刚好！</p>
+            </div>
+            <div class="comment">
+                <b>用户B：</b>
+                <p>奶盖系列真的很棒！奶盖咸香，红茶底很清爽</p>
+            </div>
+            <div class="comment">
+                <b>用户C：</b>
+                <p>芒果果茶果肉超多，夏天喝太解暑了，推荐！</p>
+            </div>
+            <div class="comment">
+                <b>用户D：</b>
+                <p>焦糖奶茶的焦糖味很浓郁，不会太甜，性价比高</p>
+            </div>
+            <div class="comment">
+                <b>用户E：</b>
+                <p>草莓奶茶颜值超高，拍照好看，味道也很赞</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 右侧旁栏（扩展版） -->
+    <aside class="right-sidebar">
+        <!-- 优惠券区域 -->
+        <div class="coupon">
+            <h3>优惠券</h3>
+            <div class="coupon-card">
+                ¥10 优惠券
+            </div>
+            <div class="coupon-card">
+                20% 折扣
+            </div>
+            <button class="btn">点击领取</button>
+        </div>
+
+        <!-- 今日推荐（放大文字+高占比） -->
+        <div class="today">
+            <h4>今日推荐</h4>
+            <div class="today-item">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87" alt="芒果果茶">
+                <div class="today-info">
+                    <p>🔥 芒果果茶</p>
+                    <small>理由：新鲜芒果现榨，果肉饱满，限时8折</small>
+                </div>
+            </div>
+            <div class="today-item">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="珍珠奶茶">
+                <div class="today-info">
+                    <p>🔥 珍珠奶茶</p>
+                    <small>理由：经典款永不踩雷，加珍珠不加价</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新增右侧旁栏内容 -->
+        <div class="extra-info">
+            <h4>配送说明</h4>
+            <ul>
+                <li>🚗 全城30分钟送达</li>
+                <li>💨 满28元免配送费</li>
+                <li>🕒 营业时段：9:00-22:00</li>
+            </ul>
+            <h4>热门活动</h4>
+            <p>每日10:00 限量秒杀</p>
+            <p>会员享双倍积分</p>
+        </div>
+    </aside>
+
+</div>
+
+<!-- 页脚 -->
+<footer>
+    <p>奶茶外卖网站 © 2026</p>
+</footer>
+
+</body>
+</html>
