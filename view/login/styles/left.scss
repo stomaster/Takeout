@@ -66,14 +66,14 @@
           width: 90px;
           height: 28px;
           border-radius: 28px;
-          background: #fdb73d;
+          background: #1ebd31;
           display: flex;
           justify-content: center;
           align-items: center;
           .vip-icon {
             width: 14px;
             height: 16px;
-            background: url(../images/vip.png) no-repeat center bottom/contain;
+            background: url(../images/youzi.png) no-repeat center bottom/contain;
             margin-right: 4px;
           }
           .text {
@@ -91,14 +91,14 @@
             width: 16px;
             height: 14px;
             display: block;
-            background: url(./images/flag.png) no-repeat center bottom/contain;
+            background: url(../images/youzi.png) no-repeat center bottom/contain;
             margin-right: 10px;
           }
           .panda-icon {
             width: 16px;
             height: 14px;
             display: block;
-            background: url(./images/panda.png) no-repeat center bottom/contain;
+            background: url(../images/nanyou.png) no-repeat center bottom/contain;
           }
         }
       }

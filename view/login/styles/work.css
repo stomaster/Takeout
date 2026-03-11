@@ -35,14 +35,6 @@
   width: 142px;
   height: 142px;
 }
-.container main .main-right .works .work-list .item .cover .play-icon {
-  width: 26px;
-  height: 28px;
-  position: absolute;
-  bottom: 14px;
-  right: 10px;
-  background: url(../images/play-icon.png) no-repeat center/contain;
-}
 .container main .main-right .works .work-list .item .info {
   width: 149px;
   box-sizing: border-box;
