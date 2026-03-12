@@ -1,5 +1,16 @@
 .container main {
   .main-right {
+    width: 900px;
+    .title {
+        height: 39px;
+        display: flex;
+         /* 关键修改：把 space-between 改成 center，让flex子元素水平居中 */
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+      }
     .messages {
       .message {
         box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
@@ -9,49 +20,22 @@
         .message-core {
           display: flex;
           padding: 25px 28px 6px;
-          .avatar {
-            flex: none;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: url(../images/avatar.png) no-repeat center / contain;
           }
           .detail {
             flex: 1;
             margin-left: 15px;
-            .info {
-              display: flex;
-              align-items: center;
-              margin-bottom: 5px;
-              .username { 
-                font-size: 14px;
-                color: #333333;
-                margin-right: 2px;
-              }
-
-              @each $icon in v-square, level, flag, panda, v-blue {
-                .#{$icon}-icon {
-                  width: 16px;
-                  height: 16px;
-                  background: url(../images/#{$icon}.png)
-                    no-repeat
-                    center /
-                    contain;
-                  margin-right: 4px;
-                }
-              }
-            }
             .text {
-              margin-bottom: 3px;
-              font-size: 12px;
-              color: #808080;
+              margin-top: 3px;
+              font-size: 20px;
+              font-weight: 500;
+              color: #ED9B00;
             }
             .detail-core {
               .text {
                 margin-bottom: 0;
                 line-height: 23px;
                 font-size: 14px;
-                color: #333333;
+                color: #6b6b6b;
                 a {
                   font-size: 14px;
                   color: #eb7350;
@@ -139,4 +123,4 @@
       }
     }
   }
-}
+

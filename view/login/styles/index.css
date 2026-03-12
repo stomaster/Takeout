@@ -264,7 +264,7 @@ header .right .regist-login li:nth-child(2) {
   background: url(../images/youzi.png) no-repeat center bottom/contain;
   margin-right: 10px;
 }
-.container main .main-left .person-info .verify-info .icons .panda-icon {
+.container main .main-left .person-info .verify-info .icons .school-icon {
   width: 16px;
   height: 14px;
   display: block;
@@ -286,16 +286,16 @@ header .right .regist-login li:nth-child(2) {
 }
 .container main .main-left .person-info .detail .item:first-child {
   border: none;
-  background: url(./images/address.png) no-repeat 0 8px/20px 20px;
+  background: url(../images/address.png) no-repeat 0 8px/20px 20px;
 }
 .container main .main-left .person-info .detail .item:nth-child(2) {
-  background: url(./images/file.png) no-repeat 0 8px/20px 20px;
+  background: url(../images/file.png) no-repeat 0 8px/20px 20px;
 }
 .container main .main-left .person-info .detail .item:nth-child(3) {
-  background: url(./images/link.png) no-repeat 0 8px/20px 20px;
+  background: url(../images/link.png) no-repeat 0 8px/20px 20px;
 }
 .container main .main-left .person-info .detail .item:nth-child(4) {
-  background: url(./images/tag.png) no-repeat 0 8px/20px 20px;
+  background: url(../images/tag.png) no-repeat 0 8px/20px 20px;
 }
 .container main .main-left .person-info .more {
   height: 36px;
@@ -311,7 +311,7 @@ header .right .regist-login li:nth-child(2) {
 .container main .main-left .person-info .more .right-icon {
   width: 4px;
   height: 7px;
-  background: url(./images/arrow-right.png) no-repeat center/contain;
+  background: url(../images/arrow-right.png) no-repeat center/contain;
 }
 .container main .main-left .ranking {
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
@@ -333,13 +333,6 @@ header .right .regist-login li:nth-child(2) {
 .container main .main-left .ranking .title .name {
   font-weight: 500;
 }
-.container main .main-left .ranking .title .love {
-  font-weight: normal;
-}
-.container main .main-left .ranking .title .love .lovenum {
-  color: #ff830a;
-  font-size: 14px;
-}
 .container main .main-left .ranking .flower {
   padding: 12px 16px 11px;
   border-top: 1px solid #f2f2f5;
@@ -355,7 +348,7 @@ header .right .regist-login li:nth-child(2) {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: url(./images/avatar.png) no-repeat center;
+  background: url(../images/banner-head-icon.jpg) no-repeat center;
 }
 .container main .main-left .ranking .flower .fl-info .fl-info-text {
   margin-bottom: 9px;
@@ -365,7 +358,6 @@ header .right .regist-login li:nth-child(2) {
 }
 .container main .main-left .ranking .flower .fl-info .fl-info-btn {
   padding: 0 10px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
@@ -388,116 +380,14 @@ header .right .regist-login li:nth-child(2) {
   text-decoration: none;
 }
 .container main .main-left .relation {
-  width: 300px;
+  width: 400px;
+  height: 400px;
   margin: 0 auto;
   margin-top: 15px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  background: #fff;
-}
-.container main .main-left .relation > .title {
-  height: 39px;
   display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-  padding: 0 16px;
-}
-.container main .main-left .relation .relation-container {
-  border-top: 1px solid #f2f2f5;
-  border-bottom: 1px solid #d9d9d9;
-  padding: 0 16px;
-}
-.container main .main-left .relation .relation-container .title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #333333;
-  margin: 13px 0 9px;
-}
-.container main .main-left .relation .relation-container .follow-list,
-.container main .main-left .relation .relation-container .fans-list {
-  margin-bottom: 17px;
-  display: flex;
-  justify-content: space-between;
-}
-.container main .main-left .relation .relation-container .fans-list .item:nth-child(1) .avatar {
-  background: url(./images/fan-avatar-1.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .fans-list .item:nth-child(2) .avatar {
-  background: url(./images/fan-avatar-2.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .fans-list .item:nth-child(3) .avatar {
-  background: url(./images/fan-avatar-3.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .fans-list .item:nth-child(4) .avatar {
-  background: url(./images/fan-avatar-4.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .follow-list .item:nth-child(1) .avatar {
-  background: url(./images/focus-avatar-1.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .follow-list .item:nth-child(2) .avatar {
-  background: url(./images/focus-avatar-2.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .follow-list .item:nth-child(3) .avatar {
-  background: url(./images/focus-avatar-3.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .follow-list .item:nth-child(4) .avatar {
-  background: url(./images/focus-avatar-4.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .item {
-  width: 50px;
-  flex: none;
-  text-align: center;
-}
-.container main .main-left .relation .relation-container .item .avatar-tag {
-  width: 50px;
-  position: relative;
-  margin-bottom: 9px;
-}
-.container main .main-left .relation .relation-container .item .avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-.container main .main-left .relation .relation-container .item .tag-blue {
-  position: absolute;
-  bottom: -5px;
-  right: -1px;
-  width: 24px;
-  height: 24px;
-  background: url(./images/v-circle-blue.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .item .tag-red {
-  position: absolute;
-  bottom: -5px;
-  right: -1px;
-  width: 24px;
-  height: 24px;
-  background: url(./images/v-circle-red.png) no-repeat center/contain;
-}
-.container main .main-left .relation .relation-container .item .name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 12px;
-  color: #333;
-}
-.container main .main-left .relation .more {
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.container main .main-left .relation .more .text {
-  font-size: 12px;
-  color: #333;
-  margin-right: 4px;
-}
-.container main .main-left .relation .more .right-icon {
-  width: 4px;
-  height: 7px;
-  background: url(./images/arrow-right.png) no-repeat center/contain;
+  background: url(../images/newproduct.png) no-repeat left/contain;
 }
 
 .container main .main-right {
@@ -594,6 +484,19 @@ header .right .regist-login li:nth-child(2) {
   background: url(../images/arrow-right.png) no-repeat center/contain;
 }
 
+.container main .main-right {
+  width: 900px;
+}
+.container main .main-right .title {
+  height: 39px;
+  display: flex;
+  /* 关键修改：把 space-between 改成 center，让flex子元素水平居中 */
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
 .container main .main-right .messages .message {
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
@@ -604,121 +507,75 @@ header .right .regist-login li:nth-child(2) {
   display: flex;
   padding: 25px 28px 6px;
 }
-.container main .main-right .messages .message .message-core .avatar {
-  flex: none;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: url(../images/avatar.png) no-repeat center/contain;
-}
-.container main .main-right .messages .message .message-core .detail {
+.container main .main-right .messages .message .detail {
   flex: 1;
   margin-left: 15px;
 }
-.container main .main-right .messages .message .message-core .detail .info {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
+.container main .main-right .messages .message .detail .text {
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ED9B00;
 }
-.container main .main-right .messages .message .message-core .detail .info .username {
-  font-size: 14px;
-  color: #333333;
-  margin-right: 2px;
-}
-.container main .main-right .messages .message .message-core .detail .info .v-square-icon {
-  width: 16px;
-  height: 16px;
-  background: url(../images/v-square.png) no-repeat center/contain;
-  margin-right: 4px;
-}
-.container main .main-right .messages .message .message-core .detail .info .level-icon {
-  width: 16px;
-  height: 16px;
-  background: url(../images/level.png) no-repeat center/contain;
-  margin-right: 4px;
-}
-.container main .main-right .messages .message .message-core .detail .info .flag-icon {
-  width: 16px;
-  height: 16px;
-  background: url(../images/flag.png) no-repeat center/contain;
-  margin-right: 4px;
-}
-.container main .main-right .messages .message .message-core .detail .info .panda-icon {
-  width: 16px;
-  height: 16px;
-  background: url(../images/panda.png) no-repeat center/contain;
-  margin-right: 4px;
-}
-.container main .main-right .messages .message .message-core .detail .info .v-blue-icon {
-  width: 16px;
-  height: 16px;
-  background: url(../images/v-blue.png) no-repeat center/contain;
-  margin-right: 4px;
-}
-.container main .main-right .messages .message .message-core .detail .text {
-  margin-bottom: 3px;
-  font-size: 12px;
-  color: #808080;
-}
-.container main .main-right .messages .message .message-core .detail .detail-core .text {
+.container main .main-right .messages .message .detail .detail-core .text {
   margin-bottom: 0;
   line-height: 23px;
   font-size: 14px;
-  color: #333333;
+  color: #6b6b6b;
 }
-.container main .main-right .messages .message .message-core .detail .detail-core .text a {
+.container main .main-right .messages .message .detail .detail-core .text a {
   font-size: 14px;
   color: #eb7350;
   text-decoration: none;
 }
-.container main .main-right .messages .message .message-core .detail .detail-core .text .heart-icon {
+.container main .main-right .messages .message .detail .detail-core .text .heart-icon {
   vertical-align: -4px;
   display: inline-block;
   width: 18px;
   height: 18px;
   background: url(../images/heart-3d.png) no-repeat center/contain;
 }
-.container main .main-right .messages .message .message-core .detail .detail-core .pic-list {
+.container main .main-right .messages .message .detail .detail-core .pic-list {
   font-size: 0;
   width: 350px;
 }
-.container main .main-right .messages .message .message-core .detail .detail-core .pic-list img {
+.container main .main-right .messages .message .detail .detail-core .pic-list img {
   width: 110px;
   height: 110px;
   margin: 5px 5px 0 0;
 }
-.container main .main-right .messages .message .message-core .detail .detail-core .fresh-news {
+.container main .main-right .messages .message .detail .detail-core .fresh-news {
   margin-top: 4px;
   display: flex;
   align-items: center;
 }
-.container main .main-right .messages .message .message-core .detail .detail-core .fresh-news .fresh-news-icon {
+.container main .main-right .messages .message .detail .detail-core .fresh-news .fresh-news-icon {
   width: 16px;
   height: 18px;
   margin-right: 6px;
   background: url(../images/fresh-news.png) no-repeat center/contain;
 }
-.container main .main-right .messages .message .message-core .detail .detail-core .fresh-news .text {
+.container main .main-right .messages .message .detail .detail-core .fresh-news .text {
   margin-top: 2px;
   font-size: 12px;
   color: #eb7350;
   line-height: unset;
 }
-.container main .main-right .messages .message .message-option {
+.container main .main-right .messages .message-option {
   height: 39px;
   display: flex;
   align-items: center;
   border-top: 1px solid #f2f2f5;
 }
-.container main .main-right .messages .message .message-option .item {
+.container main .main-right .messages .message-option .item {
   flex: 1;
   height: 22px;
   border-right: 1px solid #d9d9d9;
 }
-.container main .main-right .messages .message .message-option .item:last-child {
+.container main .main-right .messages .message-option .item:last-child {
   border: none;
 }
-.container main .main-right .messages .message .message-option .item > a {
+.container main .main-right .messages .message-option .item > a {
   height: 100%;
   display: flex;
   align-items: center;
@@ -727,24 +584,24 @@ header .right .regist-login li:nth-child(2) {
   color: #808080;
   text-decoration: none;
 }
-.container main .main-right .messages .message .message-option .item > a:hover {
+.container main .main-right .messages .message-option .item > a:hover {
   color: #eb7350;
 }
-.container main .main-right .messages .message .message-option .item [class$=-icon] {
+.container main .main-right .messages .message-option .item [class$=-icon] {
   margin-right: 5px;
   width: 12px;
   height: 12px;
 }
-.container main .main-right .messages .message .message-option .item .star-icon {
+.container main .main-right .messages .message-option .item .star-icon {
   background: url(../images/star-line.png) no-repeat center/contain;
 }
-.container main .main-right .messages .message .message-option .item .share-icon {
+.container main .main-right .messages .message-option .item .share-icon {
   background: url(../images/share-line.png) no-repeat center/contain;
 }
-.container main .main-right .messages .message .message-option .item .repeat-icon {
+.container main .main-right .messages .message-option .item .repeat-icon {
   background: url(../images/repeat-line.png) no-repeat center/contain;
 }
-.container main .main-right .messages .message .message-option .item .praised-icon {
+.container main .main-right .messages .message-option .item .praised-icon {
   background: url(../images/praised-line.png) no-repeat center/contain;
 }
 
@@ -784,5 +641,4 @@ p {
   margin: 15px auto 0 auto;
   padding-bottom: 165px;
   display: flex;
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
