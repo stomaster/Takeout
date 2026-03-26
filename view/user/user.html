@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href="./user.css" />
   <title>外卖注册</title>
+  <!-- 引入外部CSS文件 -->
+  <link rel="stylesheet" href="./user.css" />
 </head>
 <body>
   <nav class="nav">
     <a class="waimai">
-<!-- 改成外卖logo -->
-      <img src="" />
+      <img src="https://document.youkeda.com/P3-1-HTML-CSS/1.9/3-qq/qq.png" alt="logo" />
       <span>柚子外卖</span>
     </a>
     <ul class="right">
@@ -32,31 +33,51 @@
     <div class="bg"></div>
     <div class="content">
       <div class="core">
-        <h1>欢迎注册QQ</h1>
+        <h1>欢迎注册柚子外卖</h1>
         <div class="subtitle">
           <h2>每一天，乐在沟通。</h2>
           <a class="free-bright">免费靓号</a>
         </div>
 
-        <form action="">
-          <input type="text" placeholder="昵称" />
-          <input class="password" type="password" placeholder="密码" />
+        <form id="registerForm">
+          <input type="text" placeholder="昵称" id="nickname" />
+          
+          <!-- 密码输入框 + 可见性切换 -->
+          <div class="password-group">
+            <input class="password" type="password" placeholder="密码" id="password" />
+            <img class="password-toggle" id="togglePwd" src="eyeclose.png" alt="显示密码" />
+          </div>
+          
+          <!-- 确认密码输入框 + 可见性切换 + 错误提示 -->
+          <div class="password-group">
+            <input class="password" type="password" placeholder="确认密码" id="confirmPassword" />
+            <img class="password-toggle" id="toggleConfirmPwd" src="eyeclose.png" alt="显示密码" />
+            <p class="error-tip" id="pwdError">密码不一致</p>
+          </div>
+          
           <div class="mobile">
             <select>
               <option>+86</option>
               <option>+852</option>
             </select>
-            <input type="text" placeholder="手机号码" />
+            <input type="text" placeholder="手机号码" id="phone" />
           </div>
-          <p class="mobile-tip">可通过该手机号找回密码</p>
-          <button class="submit">立即注册</button>
+          <p class="mobile-tip" id="phoneTip">可通过该手机号找回密码</p>
+          <p class="error-tip" id="phoneError">请输入11位数字的手机号</p>
+          
+          <button type="button" class="submit" id="submitBtn">立即注册</button>
+          
           <div class="agreement">
-            <input type="checkbox" />
-            <label>我已阅读并同意相关服务条款和隐私政策</label>
+            <input type="checkbox" id="agreement" />
+            <label for="agreement">我已阅读并同意相关服务条款和隐私政策</label>
           </div>
         </form>
       </div>
       <footer>Copyright © 1998-2019Tencent All Rights Reserved</footer>
     </div>
   </main>
+
+  <!-- 引入外部JS文件 -->
+  <script src="./script.js"></script>
 </body>
+</html>
