@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qtc.ecommerce_demo.mapper.OrderMapper">
+
+    <insert id="insert" parameterType="com.qtc.ecommerce_demo.entity.Order"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `order` (order_no, user_id, total_amount, status)
+        VALUES (#{orderNo}, #{userId}, #{totalAmount}, #{status})
+    </insert>
+
+</mapper>
