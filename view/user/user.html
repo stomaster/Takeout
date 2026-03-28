@@ -1,83 +1,111 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>外卖注册</title>
-  <!-- 引入外部CSS文件 -->
-  <link rel="stylesheet" href="./user.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="user.css">
+  <title>用户登录</title>
+  
 </head>
 <body>
-  <nav class="nav">
-    <a class="waimai">
-      <img src="https://document.youkeda.com/P3-1-HTML-CSS/1.9/3-qq/qq.png" alt="logo" />
-      <span>柚子外卖</span>
-    </a>
-    <ul class="right">
-      <li class="bright">
-        <img
-          src="https://document.youkeda.com/P3-1-HTML-CSS/1.9/3-qq/bright.png"
-          alt="QQ靓号"
-        />
-      </li>
-      <li class="language">
-        <span>简体中文</span>
-        <img
-          class="arrow"
-          src="https://document.youkeda.com/P3-1-HTML-CSS/1.9/3-qq/arrow-down.png"
-        />
-      </li>
-      <li class="contact">意见反馈</li>
-    </ul>
-  </nav>
-  <main class="main">
-    <div class="bg"></div>
-    <div class="content">
-      <div class="core">
-        <h1>欢迎注册柚子外卖</h1>
-        <div class="subtitle">
-          <h2>每一天，乐在沟通。</h2>
-          <a class="free-bright">免费靓号</a>
-        </div>
-
-        <form id="registerForm">
-          <input type="text" placeholder="昵称" id="nickname" />
-          
-          <!-- 密码输入框 + 可见性切换 -->
-          <div class="password-group">
-            <input class="password" type="password" placeholder="密码" id="password" />
-            <img class="password-toggle" id="togglePwd" src="eyeclose.png" alt="显示密码" />
-          </div>
-          
-          <!-- 确认密码输入框 + 可见性切换 + 错误提示 -->
-          <div class="password-group">
-            <input class="password" type="password" placeholder="确认密码" id="confirmPassword" />
-            <img class="password-toggle" id="toggleConfirmPwd" src="eyeclose.png" alt="显示密码" />
-            <p class="error-tip" id="pwdError">密码不一致</p>
-          </div>
-          
-          <div class="mobile">
-            <select>
-              <option>+86</option>
-              <option>+852</option>
-            </select>
-            <input type="text" placeholder="手机号码" id="phone" />
-          </div>
-          <p class="mobile-tip" id="phoneTip">可通过该手机号找回密码</p>
-          <p class="error-tip" id="phoneError">请输入11位数字的手机号</p>
-          
-          <button type="button" class="submit" id="submitBtn">立即注册</button>
-          
-          <div class="agreement">
-            <input type="checkbox" id="agreement" />
-            <label for="agreement">我已阅读并同意相关服务条款和隐私政策</label>
-          </div>
-        </form>
-      </div>
-      <footer>Copyright © 1998-2019Tencent All Rights Reserved</footer>
+<div class="login-container">
+  <h2>用户登录</h2>
+  <form id="login-form">
+    <div class="form-group">
+      <label for="username">用户名</label>
+      <input type="text" id="username" placeholder="用户名">
     </div>
-  </main>
+    <div class="form-group">
+      <label for="password">密码</label>
+      <input type="password" id="password" placeholder="请输入密码" required>
+    </div>
+    <button type="submit">登录</button>
+    <div id="error-message" class="error"></div>
+    <!-- 登录按钮的 div 结束后，加上这个（注意：这个 div 要和登录按钮的 div 同级） -->
+    <div style="text-align: center; margin-top: 15px; font-size: 14px; clear: both;">
+      没有账号？<a href=" " style="color: #007bff; text-decoration: none; font-weight: 500;">立即注册</a >
+    </div>
+  </form>
+</div>
 
-  <!-- 引入外部JS文件 -->
-  <script src="./script.js"></script>
+
+<!-- 引入API库 -->
+<script src="../first view/api.js"></script>
+<!-- 登录逻辑 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('login-form');
+    const errorMessage = document.getElementById('error-message');
+
+    // 检查是否已登录
+    if (API.isLoggedIn()) {
+      // 如果已登录，直接跳转到主页面
+      window.location.href = '../first view/view.html';
+      return;
+    }
+
+    // 登录表单提交事件
+    loginForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (!username || !password) {
+        errorMessage.textContent = '请输入用户名和密码';
+        return;
+      }
+
+      errorMessage.textContent = ''; // 清除错误信息
+
+      try {
+        // 显示加载状态
+        const submitBtn = loginForm.querySelector('button');
+        submitBtn.disabled = true;
+        submitBtn.textContent = '登录中...';
+        const response = await fetch('http://10.91.243.22:8081/api/users/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            username: username,  // 用email作为username
+            password: password
+          })
+        });
+
+        const result = await response.json();
+        console.log('登录响应:', result);
+
+        if (result.code === 200) {
+          // 登录成功
+          alert('登录成功！');
+
+          // ✅ 正确保存用户信息
+          API.setCurrentUser(result.data, result.data.token || 'mock-token');
+
+          // ✅ 确保立即加载
+          API.utils.loadUserFromStorage();
+
+          // 跳转到主页面
+          window.location.href = '../first view/view.html';
+        } else {
+          // 登录失败
+          errorMessage.textContent = '登录失败: ' + (result.message || '用户名或密码错误');
+        }
+
+      } catch (error) {
+        console.error('登录错误:', error);
+        errorMessage.textContent = '网络错误，请检查连接';
+      } finally {
+        // 恢复按钮状态
+        const submitBtn = loginForm.querySelector('button');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '登录';
+      }
+    });
+  });
+</script>
 </body>
 </html>

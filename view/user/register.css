@@ -1,0 +1,569 @@
+/* 注册页面样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 背景泡泡装饰 */
+.bubble-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float 20s infinite linear;
+}
+
+.bubble-1 {
+    top: 10%;
+    left: 5%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    top: 60%;
+    right: 10%;
+    width: 180px;
+    height: 180px;
+    animation-delay: 5s;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.bubble-3 {
+    top: 20%;
+    right: 20%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 10s;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(30px, 20px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-20px, 40px) rotate(180deg);
+    }
+    75% {
+        transform: translate(20px, -20px) rotate(270deg);
+    }
+}
+
+/* 返回按钮 */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+/* 注册容器 */
+.register-container {
+    max-width: 480px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.register-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.register-header p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* 表单样式 */
+.register-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+}
+
+.form-group label::after {
+    content: '';
+    margin-left: 4px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.form-group input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group input.error {
+    border-color: #ff4757;
+    animation: shake 0.3s ease-in-out;
+}
+
+.form-group input.success {
+    border-color: #2ed573;
+}
+
+.hint {
+    font-size: 13px;
+    color: #888;
+    margin-top: 6px;
+    margin-left: 2px;
+}
+
+/* 错误提示 */
+.error-message {
+    color: #ff4757;
+    font-size: 13px;
+    margin-top: 6px;
+    min-height: 18px;
+    display: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.general-error {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 12px;
+    background: #ffeaea;
+    border-radius: 8px;
+    border-left: 4px solid #ff4757;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 密码强度提示 */
+.password-strength {
+    font-size: 13px;
+    margin-top: 6px;
+    min-height: 18px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.password-strength.show {
+    display: block;
+}
+
+.strength-weak {
+    color: #ff4757;
+}
+
+.strength-medium {
+    color: #ffa502;
+}
+
+.strength-strong {
+    color: #2ed573;
+}
+
+/* 服务条款 */
+.terms-group {
+    display: flex;
+    align-items: flex-start;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.terms-group input[type="checkbox"] {
+    width: auto;
+    margin: 5px 12px 0 0;
+    transform: scale(1.2);
+    accent-color: #667eea;
+}
+
+.terms-group label {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.terms-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.terms-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* 注册按钮 */
+.register-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+.register-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 加载动画 */
+.loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.loading.show {
+    display: flex;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 12px;
+}
+
+.loading span {
+    color: #667eea;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* 成功消息 */
+.success-message {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(46, 213, 115, 0.1);
+    border-radius: 12px;
+    border-left: 4px solid #2ed573;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.success-message.show {
+    display: flex;
+}
+
+.success-icon {
+    width: 30px;
+    height: 30px;
+    background: #2ed573;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+    animation: scaleIn 0.3s ease-out;
+}
+
+.success-message p {
+    color: #2ecc71;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+/* 登录链接 */
+.login-link {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 15px;
+}
+
+.login-link a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 5px;
+}
+
+.login-link a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    padding: 30px;
+    overflow-y: auto;
+    max-height: calc(80vh - 100px);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.modal-body h3 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .register-container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .register-header h1 {
+        font-size: 28px;
+    }
+
+    .form-group input {
+        padding: 14px 16px;
+    }
+
+    .terms-group {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+}

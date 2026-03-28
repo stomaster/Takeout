@@ -52,7 +52,7 @@ body {
 /* 购物车样式 */
 .cart {
     position: absolute;
-    right: 100px;
+    right: 150px;
     font-size: 16px;
     cursor: pointer;
     display: flex;

@@ -8,7 +8,7 @@
 <body>
 <!-- 顶部导航（新增购物车） -->
 <header class="header">
-    <div class="logo">🥤 奶茶</div>
+    <div class="logo">🥤 柚奶</div>
     <div class="search-box">
         <input type="text" placeholder="搜索奶茶...">
         <button>🔍</button>
@@ -18,7 +18,7 @@
         🛒 购物车
         <span class="cart-count">0</span>
     </div>
-    <div class="user">👤 <a href="file:///C:/Users/AW/Desktop/try2026/view/user/user.html">未登录</a>
+    <div class="user">👤 <a href="file:///C:/Users/AW/Desktop/try2026/view/user/user.html"></a>
                 </div>
 </header>
 <!-- 购物车弹窗 -->
@@ -346,6 +346,66 @@
         </div>
     </div>
 </div>
+<!-- 登录状态检查 - 在script.js之前添加 -->
+<script>
+    // 页面加载时检查登录状态
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('主页面加载，开始检查登录状态...');
+
+        // 1. 检查API是否加载成功
+        if (typeof API === 'undefined') {
+            console.error('❌ API库未正确加载，请检查api.js路径');
+            alert('系统初始化错误，请刷新页面重试');
+            return;
+        }
+
+        console.log('✅ API库已加载');
+
+        // 2. 强制加载用户信息
+        if (API.utils && API.utils.loadUserFromStorage) {
+            console.log('正在加载用户信息...');
+            const success = API.utils.loadUserFromStorage();
+            console.log('用户信息加载结果:', success ? '成功' : '失败');
+        } else {
+            console.error('❌ API.utils.loadUserFromStorage不存在');
+        }
+
+        // 3. 检查登录状态
+        console.log('检查登录状态:');
+        console.log('- API.isLoggedIn:', typeof API.isLoggedIn);
+        console.log('- API.isLoggedIn():', API.isLoggedIn ? API.isLoggedIn() : '方法不存在');
+        console.log('- API.getCurrentUser():', API.getCurrentUser ? API.getCurrentUser() : '无用户');
+
+        // 调试：查看localStorage中的内容
+        console.log('localStorage中的用户信息:');
+        console.log('- bubble_user:', localStorage.getItem('bubble_user'));
+        console.log('- bubble_token:', localStorage.getItem('bubble_token'));
+        console.log('- currentUser:', localStorage.getItem('currentUser'));
+        console.log('- authToken:', localStorage.getItem('authToken'));
+
+        // 检查是否已登录
+        if (!API.isLoggedIn || (typeof API.isLoggedIn === 'function' && !API.isLoggedIn())) {
+            console.error('❌ 用户未登录，跳转到登录页');
+            alert('请先登录！');
+            window.location.href = '../user/user.html';
+            return;
+        }
+
+        console.log('✅ 用户已登录，欢迎:', API.getCurrentUser ? API.getCurrentUser().username : '用户');
+
+        // 4. 更新页面上的用户名显示
+        const userElement = document.querySelector('.user a');
+        if (userElement && API.getCurrentUser) {
+            const userInfo = API.getCurrentUser();
+            if (userInfo && userInfo.username) {
+                userElement.textContent = userInfo.username;
+                console.log('✅ 页面用户名已更新为:', userInfo.username);
+            }
+        }
+    });
+</script>
+
 <!-- 引入JS文件 -->
-    <script src="script.js" defer></script>
+<script src="api.js"></script>
+<script src="script.js" defer></script>
 </html>
