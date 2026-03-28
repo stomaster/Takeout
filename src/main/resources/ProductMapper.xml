@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qtc.ecommerce_demo.mapper.ProductMapper">
+
+    <insert id="insert" parameterType="com.qtc.ecommerce_demo.entity.Product"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO product (name, description, price, stock, category, image_url, status)
+        VALUES (#{name}, #{description}, #{price}, #{stock}, #{category}, #{imageUrl}, #{status})
+    </insert>
+
+    <update id="update" parameterType="com.qtc.ecommerce_demo.entity.Product">
+        UPDATE product
+        SET name = #{name},
+            description = #{description},
+            price = #{price},
+            stock = #{stock},
+            category = #{category},
+            image_url = #{imageUrl},
+            status = #{status}
+        WHERE id = #{id}
+    </update>
+
+    <select id="batchSelectByIds" resultMap="productResultMap">
+        SELECT * FROM product
+        <where>
+            <if test="ids != null and ids.size() > 0">
+                id IN
+                <foreach collection="ids" item="id" open="(" separator="," close=")">
+                    #{id}
+                </foreach>
+            </if>
+            <if test="ids == null or ids.size() == 0">
+                1 = 0 <!-- 返回空结果集 -->
+            </if>
+        </where>
+    </select>
+
+</mapper>
