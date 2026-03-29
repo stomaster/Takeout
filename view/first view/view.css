@@ -29,17 +29,42 @@ body {
     font-size: 22px;
     font-weight: bold;
 }
+/* 你的原有全部CSS保留，我只追加搜索样式 */
 .search-box {
     display: flex;
     width: 400px;
+    position: relative;
 }
-.search-box input {
-    flex: 1;
-    height: 36px;
-    border: none;
-    border-radius: 18px 0 0 18px;
-    padding-left: 16px;
+.search-results {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 9999;
+    display: none;
+}
+.result-item {
+    padding: 10px 16px;
+    cursor: pointer;
     font-size: 14px;
+    color: #000;
+}
+.result-item:hover {
+    background: #f5e8de;
+}
+.highlight {
+    color: #8B5A3C;
+    font-weight: bold;
+}
+.no-result {
+    padding: 12px;
+    text-align: center;
+    color: #999;
 }
 .search-box button {
     width: 40px;

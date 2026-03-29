@@ -10,15 +10,18 @@
 <header class="header">
     <div class="logo">🥤 柚奶</div>
     <div class="search-box">
-        <input type="text" placeholder="搜索奶茶...">
-        <button>🔍</button>
+        <input type="text" id="searchInput" placeholder="搜索奶茶..." autocomplete="off">
+        <button id="searchBtn">🔍</button>
+        <div class="search-results" id="searchResults"></div>
     </div>
+
+    
     <!-- 购物车 -->
     <div class="cart">
         🛒 购物车
         <span class="cart-count">0</span>
     </div>
-    <div class="user">👤 <a href="file:///C:/Users/AW/Desktop/try2026/view/user/user.html"></a>
+    <div class="user">👤 <a href="../login/login.html"></a>
                 </div>
 </header>
 <!-- 购物车弹窗 -->
@@ -404,8 +407,124 @@
         }
     });
 </script>
+<script>
+    // 页面加载时检查登录状态
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('主页面加载，开始检查登录状态...');
+        
+        // 1. 检查API是否加载成功
+        if (typeof API === 'undefined') {
+            console.error('❌ API库未正确加载，请检查api.js路径');
+            return;
+        }
+        
+        console.log('✅ API库已加载');
+        
+        // 2. 根据用户ID设置登录链接
+        setupUserLoginLink();
+    });
+    
+    /**
+     * 根据用户ID设置登录链接
+     */
+    function setupUserLoginLink() {
+        const userElement = document.querySelector('.user');
+        if (!userElement) {
+            console.error('未找到.user元素');
+            return;
+        }
+        
+        // 获取用户ID
+        const userId = getUserId();
+        console.log('获取到的用户ID:', userId);
+        
+        // 清空原有内容
+        userElement.innerHTML = '👤 ';
+        
+        // 创建链接元素
+        const link = document.createElement('a');
+        link.className = 'user-login-link';
+        
+        // 【核心】只根据ID决定，不考虑登录状态
+        if (userId === 1) {
+            link.href = '../login/login.html';
+            link.textContent = '管理员登录';
+            console.log('ID=1 → login.html');
+        } else if (userId ===8) {
+            link.href = '../login/login2.html';
+            link.textContent = '用户登录';
+            console.log('ID=2 → login2.html');
+        } else {
+            // 其他ID或获取不到
+            link.href = '../login/login.html';
+            link.textContent = '登录';
+            console.log('ID=' + userId + ' → login.html（默认）');
+        }
+        
+        // 添加链接到用户区域
+        userElement.appendChild(link);
+        
+        // 【可选】如果已登录，修改显示文字
+        updateUsernameIfLoggedIn(userId);
+    }
+    
+    /**
+     * 获取用户ID
+     */
+    function getUserId() {
+        try {
+            // 从localStorage获取
+            const userDataStr = localStorage.getItem('bubble_user') || localStorage.getItem('currentUser');
+            if (userDataStr) {
+                const userData = JSON.parse(userDataStr);
+                if (userData && userData.id !== undefined) {
+                    return parseInt(userData.id);
+                } else if (userData && userData.userId !== undefined) {
+                    return parseInt(userData.userId);
+                }
+            }
+            
+            // 从API获取
+            if (window.API && API.getCurrentUser) {
+                const userInfo = API.getCurrentUser();
+                if (userInfo && userInfo.id !== undefined) {
+                    return parseInt(userInfo.id);
+                } else if (userInfo && userInfo.userId !== undefined) {
+                    return parseInt(userInfo.userId);
+                }
+            }
+            
+            // 默认返回1
+            return 1;
+            
+        } catch (error) {
+            console.error('获取用户ID失败:', error);
+            return 1;
+        }
+    }
+    
+    /**
+     * 【可选】如果已登录，显示用户名而不是"管理员登录"
+     */
+    function updateUsernameIfLoggedIn(userId) {
+        const isLoggedIn = window.API && API.isLoggedIn && API.isLoggedIn();
+        if (isLoggedIn && API.getCurrentUser) {
+            const userInfo = API.getCurrentUser();
+            if (userInfo && userInfo.username) {
+                const link = document.querySelector('.user a');
+                if (link) {
+                    // 显示用户名，但链接保持不变
+                    link.textContent = userInfo.username;
+                    console.log('已登录，显示用户名:', userInfo.username, '，链接指向:', 
+                        userId === 2 ? 'login2.html' : 'login.html');
+                }
+            }
+        }
+    }
+</script>
 
 <!-- 引入JS文件 -->
 <script src="api.js"></script>
+<script src="search.js"></script>
 <script src="script.js" defer></script>
 </html>
