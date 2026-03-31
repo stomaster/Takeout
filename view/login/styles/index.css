@@ -1,4 +1,10 @@
 @charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -95,7 +101,7 @@ header .right .regist-login li:nth-child(2) {
 .container .banner .banner-top {
   width: 920px;
   height: 300px;
-  background: url(../images/banner-bg.jpg) no-repeat bottom;
+  background: url(../images/1/banner-bg.jpg) no-repeat bottom;
   /* 强制宽度铺满容器，高度自动适配（可能变形） */
   background-size: 100% auto;
   /* 或强制宽高都铺满容器（更易变形）：background-size: 100% 100%; */
@@ -111,7 +117,7 @@ header .right .regist-login li:nth-child(2) {
   height: 108px;
   margin: 0 auto;
   border-radius: 50%;
-  background: url(../images/banner-head-icon.png) no-repeat center;
+  background: url(../images/1/banner-head-icon.png) no-repeat center;
   background-size: contain;
 }
 .container .banner .banner-top .main .personal-introduce {
@@ -347,7 +353,7 @@ header .right .regist-login li:nth-child(2) {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: url(../images/banner-head-icon.jpg) no-repeat center;
+  background: url(../images/1/banner-head-icon.jpg) no-repeat center;
 }
 .container main .main-left .ranking .flower .fl-info .fl-info-text {
   margin-bottom: 9px;
@@ -534,105 +540,9 @@ header .right .regist-login li:nth-child(2) {
   height: 18px;
   background: url(../images/heart-3d.png) no-repeat center/contain;
 }
-.container main .main-right .messages .message .detail .detail-core .pic-list {
-  font-size: 0;
-  width: 350px;
-}
-.container main .main-right .messages .message .detail .detail-core .pic-list img {
-  width: 110px;
-  height: 110px;
-  margin: 5px 5px 0 0;
-}
-.container main .main-right .messages .message .detail .detail-core .fresh-news {
-  margin-top: 4px;
-  display: flex;
-  align-items: center;
-}
-.container main .main-right .messages .message .detail .detail-core .fresh-news .fresh-news-icon {
-  width: 16px;
-  height: 18px;
-  margin-right: 6px;
-  background: url(../images/fresh-news.png) no-repeat center/contain;
-}
-.container main .main-right .messages .message .detail .detail-core .fresh-news .text {
-  margin-top: 2px;
-  font-size: 12px;
-  color: #eb7350;
-  line-height: unset;
-}
-.container main .main-right .messages .message-option {
-  height: 39px;
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #f2f2f5;
-}
-.container main .main-right .messages .message-option .item {
-  flex: 1;
-  height: 22px;
-  border-right: 1px solid #d9d9d9;
-}
-.container main .main-right .messages .message-option .item:last-child {
-  border: none;
-}
-.container main .main-right .messages .message-option .item > a {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  color: #808080;
-  text-decoration: none;
-}
-.container main .main-right .messages .message-option .item > a:hover {
-  color: #eb7350;
-}
-.container main .main-right .messages .message-option .item [class$=-icon] {
-  margin-right: 5px;
-  width: 12px;
-  height: 12px;
-}
-.container main .main-right .messages .message-option .item .star-icon {
-  background: url(../images/star-line.png) no-repeat center/contain;
-}
-.container main .main-right .messages .message-option .item .share-icon {
-  background: url(../images/share-line.png) no-repeat center/contain;
-}
-.container main .main-right .messages .message-option .item .repeat-icon {
-  background: url(../images/repeat-line.png) no-repeat center/contain;
-}
-.container main .main-right .messages .message-option .item .praised-icon {
-  background: url(../images/praised-line.png) no-repeat center/contain;
-}
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-h1,
-h2 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}
-
-/* 浏览器都有自己的默认样式，以上部分为清除浏览器默认样式 */
 .container {
-  background: #D6BAA3 url(../images/body_bg_page.jpg) no-repeat center top/contain;
+  background: #D6BAA3 url(../images/1/body_bg_page.jpg) no-repeat center top/contain;
   padding-top: 30px;
 }
 .container main {
