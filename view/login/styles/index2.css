@@ -5,6 +5,12 @@
     box-sizing: border-box;
     font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
+ul,
+li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
 header {
   display: flex;
   justify-content: space-between;
