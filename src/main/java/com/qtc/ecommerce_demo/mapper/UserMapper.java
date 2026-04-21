@@ -1,5 +1,4 @@
 package com.qtc.ecommerce_demo.mapper;
-
 import com.qtc.ecommerce_demo.entity.User;
 import org.apache.ibatis.annotations.Mapper; //生成实现类；把java换成sql；支持xml和这里混用
 /*
@@ -54,7 +53,7 @@ import java.util.List;
 public interface UserMapper {
 
     @Select("SELECT * FROM user WHERE id = #{id}")//注解方式，简单查询
-    User selectById(@Param("id") Long id);//2.1 基本作用
+    User selectById(@Param("id") Long id);//2.1 基本作用     将参数命名为"id"，SQL中可用#{id}引用
 
 //    @Param注解用于给方法参数命名，使得在 XML 映射文件中可以使用指定的名称来引用参数。
 

@@ -14,6 +14,9 @@ public class Product {
     private String category;
     private String imageUrl;
     private Integer status;  // 1-上架, 0-下架
+    private Integer view_count;
+    private Integer collect_count;
+    private Integer purchase_count;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 }

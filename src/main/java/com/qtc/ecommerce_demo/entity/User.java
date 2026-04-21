@@ -17,7 +17,11 @@ toString()方法
 
 equals()和hashCode()方法
 
-无参构造器
+@Data自动生成哪个：是的，@Data注解的效果等同于同时使用了 @RequiredArgsConstructor注解（以及其他注解，如@Getter, @Setter
+等）。它不会自动生成 @NoArgsConstructor。
+在您的 User类中，所有字段都不是 final也没有 @NonNull注解，因此 @Data生成的 @RequiredArgsConstructor实际上就是
+一个无参构造器。但这是一个危险的巧合。
+无参构造器:用来User user=new User();
 
  */
 public class User {

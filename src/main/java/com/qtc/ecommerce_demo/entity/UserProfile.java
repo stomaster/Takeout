@@ -92,4 +92,5 @@ tagList是传入的新标签，格式是A，B,C
 用户在profile界面设置细节个人信息，保存后即可显示。
 userid，nickname，signature，viewcount，一直到tags，都要显示
 用户自定义标签的功能暂时先算了，，感觉这里用‘，’连接怪怪的
+可以上传头像？？
  */

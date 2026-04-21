@@ -21,6 +21,7 @@ Controller → UserService（接口） → UserServiceImpl（实现）
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
+
 /*
 导入注解：导入 @Service注解的类定义
 
@@ -33,7 +34,18 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+/*
+stereotype是 Spring 框架中的一个核心注解包，包含用于声明组件类型和角色的标识性注解。
 
+包结构：
+复制
+org.springframework.stereotype
+├── Component
+├── Service
+├── Repository
+├── Controller
+└── Indexed
+ */
 @Service
 /*
 //
@@ -111,6 +123,33 @@ public final class StringUtils {  // final 类
 public class UserServiceImpl implements UserService {
 
     private final UserMapper userMapper;  //构造器注入
+    /*
+    构造器省略了：
+    public UserServiceImpl(UserMapper userMapper) {
+        this.userMapper = userMapper;  // ✅ 必须的初始化
+    }
+
+    在主函数里，
+    public class Test {
+    public static void main(String[] args) {
+        // 这行代码发生了什么？
+        UserServiceImpl service = new UserServiceImpl(userMapper);
+        // 1. new：分配内存
+        // 2. UserServiceImpl(userMapper)：调用构造器
+        // 3. 执行构造器中的 this.userMapper = userMapper
+        // 4. 将创建的对象赋值给 service
+    }
+    }
+
+     */
+    /*
+    实现接口方法要override
+    确保你确实是实现接口方法
+
+防止方法名拼写错误
+
+编译器会检查方法签名是否匹配
+     */
     @Override
     public User getUserById(Long id) {
         return userMapper.selectById(id);
@@ -139,7 +178,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(user.getPassword());
 
         // 4. 插入用户
-        int result = userMapper.insert(user);
+        int result = userMapper.insert(user);//userMapper生成的mybatis代理会有result返回值，比如插入的用户的id
         if (result <= 0) {
             throw new RuntimeException("用户注册失败");
         }
